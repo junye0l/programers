@@ -1,16 +1,8 @@
 function solution(n, control) {
-    const charControl = control.split("");
+    const moves = { 'w': 1, 's': -1, 'd': 10, 'a': -10 };
     
-    for(let i = 0; i < control.length; i++){
-        if(charControl[i] === 'w'){
-            n += 1;
-        }else if(charControl[i] === 's'){
-            n -= 1;
-        }else if(charControl[i] === 'd'){
-            n += 10;
-        }else if(charControl[i] === 'a'){
-            n -= 10;
-        }
+    for (const char of control) {
+        n += moves[char];
     }
     return n;
 }
